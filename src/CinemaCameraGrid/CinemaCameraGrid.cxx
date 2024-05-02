@@ -176,7 +176,7 @@ int CinemaCameraGrid::RequestData(vtkInformation *request,
 
     const double kPi = vtkMath::Pi();
 
-    auto vecToStr = [](auto vec, int n){
+    auto vecToStr = [](const double vec, int n){
       std::string res = "(";
       for(int i=0; i<n; i++) res+=std::to_string(vec[i])+',';
       res[res.size()-1] = ')';

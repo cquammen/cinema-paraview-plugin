@@ -12,6 +12,7 @@
 
 #include <algorithm>
 // #include <H5Cpp.h>
+#include <sstream>
 #include <vtk_hdf5.h>
 
 vtkStandardNewMacro(CinemaWriter);
@@ -226,7 +227,7 @@ int getHeader(std::map<std::string,int>& header, const std::string path){
     return 0;
   }
 
-  size_t nMeta;
+  hsize_t nMeta;
   H5Gget_num_objs(meta,&nMeta);
   for(size_t m=0; m<nMeta; m++){
 
